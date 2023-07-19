@@ -22,6 +22,11 @@ public class SalonUserDto {
         this.u_phone = u_phone;
     }
 
+    public SalonUserDto(String u_id, String u_pw) {
+        this.u_id = u_id;
+        this.u_pw = u_pw;
+    }
+
     public int getU_no() {
         return u_no;
     }
