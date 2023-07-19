@@ -38,6 +38,7 @@ public class Main {
                 case SalonConfig.ADMIN_MODE:
                     boolean isAdmin = true;
                     while (isAdmin){
+                        Gnb.showAdminGnb();
 
                     }
 
@@ -45,31 +46,34 @@ public class Main {
                 case SalonConfig.USER_MODE:
                     boolean isUser = true;
                     while (isUser){
-                        case SalonUserConfig.USER_SIGN_UP:
-                            break;
-                        case SalonUserConfig.USER_SIGN_IN:
-                            break;
-                        case SalonUserConfig.USER_SIGN_OUT:
-                            break;
-                        case SalonUserConfig.USER_MODIFY:
-                            break;
-                        case SalonUserConfig.USER_SIGN_DOWN:
-                            break;
-                        case SalonUserConfig.USER_RESERVATION:
-                            break;
-                        case SalonUserConfig.USER_RESERVATION_HISTORY_INQUIRY:
-                            break;
-                        case SalonUserConfig.USER_RESERVATION_CANCEL:
-                            break;
-                        case SalonUserConfig.USER_RESERVATION_MODIFY:
-                            break;
-                        case SalonUserConfig.USER_PAYMENT:
-                            break;
-                        case SalonUserConfig.USER_PAYMENT_HISTORY_INQUIRY:
-                            break;
-                        case SalonUserConfig.USER_PAYMENT_CANCEL:
-                            break;
-
+                        Gnb.showUserGnb();
+                        switch (sc.nextInt()) {
+                            case SalonUserConfig.USER_SIGN_UP:
+                                break;
+                            case SalonUserConfig.USER_SIGN_IN:
+                                break;
+                            case SalonUserConfig.USER_SIGN_OUT:
+                                isUser = false;
+                                break;
+                            case SalonUserConfig.USER_MODIFY:
+                                break;
+                            case SalonUserConfig.USER_SIGN_DOWN:
+                                break;
+                            case SalonUserConfig.USER_RESERVATION:
+                                break;
+                            case SalonUserConfig.USER_RESERVATION_HISTORY_INQUIRY:
+                                break;
+                            case SalonUserConfig.USER_RESERVATION_CANCEL:
+                                break;
+                            case SalonUserConfig.USER_RESERVATION_MODIFY:
+                                break;
+                            case SalonUserConfig.USER_PAYMENT:
+                                break;
+                            case SalonUserConfig.USER_PAYMENT_HISTORY_INQUIRY:
+                                break;
+                            case SalonUserConfig.USER_PAYMENT_CANCEL:
+                                break;
+                        }
                     }
                     break;
                 case SalonConfig.SYSTEM_SHUTDOWN:
