@@ -95,7 +95,6 @@ public class Main {
                     boolean isUser = true;
                     while (isUser){
                         Gnb.showUserGnb();
-
                         IUserMember iUserMember = null;
                         switch (sc.nextInt()) {
                             case SalonUserConfig.USER_SIGN_UP:

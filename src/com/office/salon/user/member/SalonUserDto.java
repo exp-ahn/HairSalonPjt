@@ -13,6 +13,15 @@ public class SalonUserDto {
     private String u_reg_date;
     private String u_mod_date;
 
+    public SalonUserDto(int u_no, String u_id, String u_pw, String u_name, String u_mail, String u_phone) {
+        this.u_no = u_no;
+        this.u_id = u_id;
+        this.u_pw = u_pw;
+        this.u_name = u_name;
+        this.u_mail = u_mail;
+        this.u_phone = u_phone;
+    }
+
     public int getU_no() {
         return u_no;
     }
