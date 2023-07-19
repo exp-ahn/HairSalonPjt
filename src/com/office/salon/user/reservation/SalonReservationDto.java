@@ -10,6 +10,7 @@ public class SalonReservationDto {
     private String r_reg_date;
     private String r_mod_date;
 
+    public SalonReservationDto() {}
     public int getR_no() {
         return r_no;
     }

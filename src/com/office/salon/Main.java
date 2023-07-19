@@ -5,9 +5,11 @@ import com.office.salon.admin.container.AdminContainer;
 import com.office.salon.admin.member.AdminMemberController;
 import com.office.salon.admin.member.AdminMemberDao;
 import com.office.salon.admin.member.AdminMemberService;
+import com.office.salon.admin.member.impl.IAdminMember;
 import com.office.salon.admin.reservation.AdminReservationController;
 import com.office.salon.admin.reservation.AdminReservationDao;
 import com.office.salon.admin.reservation.AdminReservationService;
+import com.office.salon.admin.reservation.impl.*;
 import com.office.salon.config.SalonConfig;
 import com.office.salon.user.config.SalonUserConfig;
 import com.office.salon.user.container.UserContainer;
@@ -18,6 +20,7 @@ import com.office.salon.user.member.impl.*;
 import com.office.salon.user.reservation.SalonReservationController;
 import com.office.salon.user.reservation.SalonReservationDao;
 import com.office.salon.user.reservation.SalonReservationService;
+import com.office.salon.user.reservation.impl.*;
 
 import java.util.Scanner;
 
@@ -61,6 +64,7 @@ public class Main {
 
             switch (sc.nextInt()){
                 case SalonConfig.ADMIN_MODE:
+                    IAdminMember adminMember = null;
                     boolean isAdmin = true;
                     while (isAdmin){
                         Gnb.showAdminGnb();
@@ -79,12 +83,19 @@ public class Main {
                             case SalonAdminConfig.ADMIN_APPROVAL:
                                 break;
                             case SalonAdminConfig.ADMIN_REGIST_RESERVATION_TIME:
+                                adminMember = new AdminReservationTimeRegist();
+                                break;
+                            case SalonAdminConfig.ADMIN_MODIFY_RESERVATION_TIME:
+                                adminMember = new AdminReservationTimeModify();
                                 break;
                             case SalonAdminConfig.ADMIN_REGIST_SERVICE:
+                                adminMember = new AdminReservationServiceRegist();
                                 break;
                             case SalonAdminConfig.ADMIN_MODIFY_SERVICE:
+                                adminMember = new AdminReservationServiceModify();
                                 break;
                             case SalonAdminConfig.ADMIN_MODIFY_MILEAGE_PERCENT:
+                                adminMember = new AdminMileagePercentModify();
                                 break;
                         }
 
@@ -114,18 +125,25 @@ public class Main {
                                 iUserMember = new UserDelete();
                                 break;
                             case SalonUserConfig.USER_RESERVATION:
+                                new UserReservationRegist();
                                 break;
                             case SalonUserConfig.USER_RESERVATION_HISTORY_INQUIRY:
+                                new UserReservationHistory();
                                 break;
                             case SalonUserConfig.USER_RESERVATION_CANCEL:
+                                new UserReservationCancel();
                                 break;
                             case SalonUserConfig.USER_RESERVATION_MODIFY:
+                                new UserReservationModify();
                                 break;
                             case SalonUserConfig.USER_PAYMENT:
+                                new UserPayment();
                                 break;
                             case SalonUserConfig.USER_PAYMENT_HISTORY_INQUIRY:
+                                new UserPaymentHistory();
                                 break;
                             case SalonUserConfig.USER_PAYMENT_CANCEL:
+                                new UserPaymentCancel();
                                 break;
                         }
                     }
