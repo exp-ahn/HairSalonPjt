@@ -14,6 +14,7 @@ import com.office.salon.user.container.UserContainer;
 import com.office.salon.user.member.SalonUserController;
 import com.office.salon.user.member.SalonUserDao;
 import com.office.salon.user.member.SalonUserService;
+import com.office.salon.user.member.impl.*;
 import com.office.salon.user.reservation.SalonReservationController;
 import com.office.salon.user.reservation.SalonReservationDao;
 import com.office.salon.user.reservation.SalonReservationService;
@@ -94,17 +95,24 @@ public class Main {
                     boolean isUser = true;
                     while (isUser){
                         Gnb.showUserGnb();
+
+                        IUserMember iUserMember = null;
                         switch (sc.nextInt()) {
                             case SalonUserConfig.USER_SIGN_UP:
+                                iUserMember = new UserSignUp();
                                 break;
                             case SalonUserConfig.USER_SIGN_IN:
+                                iUserMember = new UserSignIn();
                                 break;
                             case SalonUserConfig.USER_SIGN_OUT:
+                                iUserMember = new UserSignOut();
                                 isUser = false;
                                 break;
                             case SalonUserConfig.USER_MODIFY:
+                                iUserMember = new UserModify();
                                 break;
                             case SalonUserConfig.USER_SIGN_DOWN:
+                                iUserMember = new UserDelete();
                                 break;
                             case SalonUserConfig.USER_RESERVATION:
                                 break;
