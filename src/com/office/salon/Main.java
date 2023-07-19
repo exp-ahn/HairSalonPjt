@@ -1,5 +1,13 @@
 package com.office.salon;
 
+import com.office.salon.admin.config.SalonAdminConfig;
+import com.office.salon.admin.container.AdminContainer;
+import com.office.salon.admin.member.AdminMemberController;
+import com.office.salon.admin.member.AdminMemberDao;
+import com.office.salon.admin.member.AdminMemberService;
+import com.office.salon.admin.reservation.AdminReservationController;
+import com.office.salon.admin.reservation.AdminReservationDao;
+import com.office.salon.admin.reservation.AdminReservationService;
 import com.office.salon.config.SalonConfig;
 import com.office.salon.user.config.SalonUserConfig;
 import com.office.salon.user.container.UserContainer;
@@ -15,6 +23,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        /*
+        * 관리자 컨테이너
+        */
+        AdminContainer adminContainer = AdminContainer.getInstance();
+
+        adminContainer.setAdminMemberController(new AdminMemberController());
+        adminContainer.setAdminMemberService(new AdminMemberService());
+        adminContainer.setAdminMemberDao(new AdminMemberDao());
+
+        adminContainer.setAdminReservationController(new AdminReservationController());
+        adminContainer.setAdminReservationService(new AdminReservationService());
+        adminContainer.setAdminReservationDao(new AdminReservationDao());
+
+        /*
+         * 사용자 컨테이너
+         */
+
         UserContainer userContainer = UserContainer.getInstance();
 
         userContainer.setSalonUserController(new SalonUserController());
@@ -24,7 +49,6 @@ public class Main {
         userContainer.setSalonReservationController(new SalonReservationController());
         userContainer.setSalonReservationService(new SalonReservationService());
         userContainer.setSalonReservationDao(new SalonReservationDao());
-
 
         Scanner sc = new Scanner(System.in);
 
@@ -39,6 +63,29 @@ public class Main {
                     boolean isAdmin = true;
                     while (isAdmin){
                         Gnb.showAdminGnb();
+                        switch(sc.nextInt()){
+                            case SalonAdminConfig.ADMIN_SIGN_UP:
+                                break;
+                            case SalonAdminConfig.ADMIN_SIGN_IN:
+                                break;
+                            case SalonAdminConfig.ADMIN_SIGN_OUT:
+                                isAdmin = false;
+                                break;
+                            case SalonAdminConfig.ADMIN_MODIFY:
+                                break;
+                            case SalonAdminConfig.ADMIN_SIGN_DOWN:
+                                break;
+                            case SalonAdminConfig.ADMIN_APPROVAL:
+                                break;
+                            case SalonAdminConfig.ADMIN_REGIST_RESERVATION_TIME:
+                                break;
+                            case SalonAdminConfig.ADMIN_REGIST_SERVICE:
+                                break;
+                            case SalonAdminConfig.ADMIN_MODIFY_SERVICE:
+                                break;
+                            case SalonAdminConfig.ADMIN_MODIFY_MILEAGE_PERCENT:
+                                break;
+                        }
 
                     }
 
