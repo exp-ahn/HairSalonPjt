@@ -5,6 +5,7 @@ import com.office.salon.admin.container.AdminContainer;
 import com.office.salon.admin.member.AdminMemberController;
 import com.office.salon.admin.member.AdminMemberDao;
 import com.office.salon.admin.member.AdminMemberService;
+import com.office.salon.admin.member.impl.AdminSignUp;
 import com.office.salon.admin.member.impl.IAdminMember;
 import com.office.salon.admin.reservation.AdminReservationController;
 import com.office.salon.admin.reservation.AdminReservationDao;
@@ -70,6 +71,7 @@ public class Main {
                         Gnb.showAdminGnb();
                         switch(sc.nextInt()){
                             case SalonAdminConfig.ADMIN_SIGN_UP:
+                                adminMember = new AdminSignUp();
                                 break;
                             case SalonAdminConfig.ADMIN_SIGN_IN:
                                 break;
@@ -98,7 +100,7 @@ public class Main {
                                 adminMember = new AdminMileagePercentModify();
                                 break;
                         }
-
+                        adminMember.execute(sc);
 
                     }
 

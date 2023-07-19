@@ -9,6 +9,18 @@ public class SalonAdminDto {
     private String a_reg_date;
     private String a_mod_date;
 
+    public SalonAdminDto(){
+
+    }
+
+    public SalonAdminDto(String a_id, String a_pw, String a_mail, int a_grade) {
+        this.a_id = a_id;
+        this.a_pw = a_pw;
+        this.a_mail = a_mail;
+        this.a_grade = a_grade;
+    }
+
+
     public int getA_no() {
         return a_no;
     }
