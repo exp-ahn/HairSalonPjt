@@ -131,7 +131,7 @@ public class AdminReservationDao {
         return timeList;
     }
 
-    public int reservationTimeModify(int atTime) {
+    public int reservationTimeModify(AdminReservationTimeDto adminReservationTimeDto) {
         Connection conn = null;
         PreparedStatement pstmt = null;
         int result = 0;
@@ -141,9 +141,11 @@ public class AdminReservationDao {
 
             conn = DriverManager.getConnection(SalonDBConfig.DB_URL, SalonDBConfig.DB_USER, SalonDBConfig.DB_PW);
 
-            String sql = "update abletime_tbl set at_time = ?";
+            String sql = "update abletime_tbl set at_time = ? " +
+                    "where at_no = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, atTime);
+            pstmt.setInt(2, adminReservationTimeDto.getAt_no());
+            pstmt.setString(1, adminReservationTimeDto.getAt_time());
 
             result = pstmt.executeUpdate();
 

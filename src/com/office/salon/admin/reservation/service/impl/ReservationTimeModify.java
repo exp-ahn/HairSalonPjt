@@ -2,18 +2,20 @@ package com.office.salon.admin.reservation.service.impl;
 
 
 import com.office.salon.admin.container.AdminContainer;
+import com.office.salon.admin.reservation.AdminReservationDto;
+import com.office.salon.admin.reservation.AdminReservationTimeDto;
 
 public class ReservationTimeModify implements IReservationTimeRegist {
 
-    private int at_time;
+    private AdminReservationTimeDto adminReservationTimeDto;
 
 
-    public ReservationTimeModify(int at_time){
-        this.at_time = at_time;
+    public ReservationTimeModify(AdminReservationTimeDto adminReservationTimeDto){
+        this.adminReservationTimeDto = adminReservationTimeDto;
     };
 
     @Override
     public int execute() {
-        return AdminContainer.getInstance().getAdminReservationDao().reservationTimeModify(at_time);
+        return AdminContainer.getInstance().getAdminReservationDao().reservationTimeModify(adminReservationTimeDto);
     }
 }

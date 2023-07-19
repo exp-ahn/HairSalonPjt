@@ -24,8 +24,8 @@ public class AdminReservationController {
         return AdminContainer.getInstance().getAdminReservationService().reservationTimeList(new ReservationTimeList());
     }
 
-    public int reservationTimeModify(int atTime) {
+    public int reservationTimeModify(AdminReservationTimeDto adminReservationTimeDto) {
 
-        return AdminContainer.getInstance().getAdminReservationService().reservationTimeModify(new ReservationTimeModify(atTime));
+        return AdminContainer.getInstance().getAdminReservationService().reservationTimeModify(new ReservationTimeModify(adminReservationTimeDto));
     }
 }

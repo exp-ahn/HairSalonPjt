@@ -10,7 +10,8 @@ public class AdminReservationTimeDto {
     }
     public AdminReservationTimeDto() {}
 
-    public AdminReservationTimeDto(String at_time){
+    public AdminReservationTimeDto(int at_no, String at_time){
+        this.at_no = at_no;
         this.at_time = at_time;
     }
 

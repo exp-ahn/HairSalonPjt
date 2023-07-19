@@ -23,10 +23,12 @@ public class AdminReservationTimeModify implements IAdminReservation{
             }
         }
 
+        System.out.println("INPUT NUMBER TO MODIFY");
+        int at_no = sc.nextInt();
         System.out.println("INPUT TIME TO MODIFY");
-        int at_time = sc.nextInt();
+        String at_time = sc.next();
 
-        int result = adminReservationController.reservationTimeModify(at_time);
+        int result = adminReservationController.reservationTimeModify(new AdminReservationTimeDto(at_no, at_time));
 
         if (result > 0){
             System.out.println("RESERVATIONTIME MODIFY SUCCESS!!");
