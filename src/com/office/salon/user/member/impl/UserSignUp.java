@@ -12,15 +12,15 @@ public class UserSignUp implements IUserMember{
     public void execute(Scanner sc) {
         SalonUserController salonUserController = UserContainer.getInstance().getSalonUserController();
         System.out.println("Please input User ID.");
-        String u_id = sc.nextLine();
+        String u_id = sc.next();
         System.out.println("Please input User PW.");
-        String u_pw = sc.nextLine();
+        String u_pw = sc.next();
         System.out.println("Please input User Name.");
-        String u_name = sc.nextLine();
+        String u_name = sc.next();
         System.out.println("Please input User Mail.");
-        String u_mail = sc.nextLine();
+        String u_mail = sc.next();
         System.out.println("Please input User Phone Number.");
-        String u_phone = sc.nextLine();
+        String u_phone = sc.next();
 
         int result = salonUserController.signUpConfirm(new SalonUserDto(0, u_id, u_pw, u_name, u_mail, u_phone));
 

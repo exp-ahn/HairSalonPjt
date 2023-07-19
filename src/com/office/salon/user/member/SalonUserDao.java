@@ -58,10 +58,10 @@ public class SalonUserDao {
                     "values(?, ?, ?, ?, ?, 1, 0, 0, now(), now()) ";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, salonUserDto.getU_id());
-            pstmt.setString(1, salonUserDto.getU_pw());
-            pstmt.setString(1, salonUserDto.getU_name());
-            pstmt.setString(1, salonUserDto.getU_mail());
-            pstmt.setString(1, salonUserDto.getU_phone());
+            pstmt.setString(2, salonUserDto.getU_pw());
+            pstmt.setString(3, salonUserDto.getU_name());
+            pstmt.setString(4, salonUserDto.getU_mail());
+            pstmt.setString(5, salonUserDto.getU_phone());
             result = pstmt.executeUpdate();
 
         } catch (Exception e){

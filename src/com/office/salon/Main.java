@@ -125,27 +125,28 @@ public class Main {
                                 iUserMember = new UserDelete();
                                 break;
                             case SalonUserConfig.USER_RESERVATION:
-                                new UserReservationRegist();
+                                iUserMember = new UserReservationRegist();
                                 break;
                             case SalonUserConfig.USER_RESERVATION_HISTORY_INQUIRY:
-                                new UserReservationHistory();
+                                iUserMember = new UserReservationHistory();
                                 break;
                             case SalonUserConfig.USER_RESERVATION_CANCEL:
-                                new UserReservationCancel();
+                                iUserMember = new UserReservationCancel();
                                 break;
                             case SalonUserConfig.USER_RESERVATION_MODIFY:
-                                new UserReservationModify();
+                                iUserMember = new UserReservationModify();
                                 break;
                             case SalonUserConfig.USER_PAYMENT:
-                                new UserPayment();
+                                iUserMember = new UserPayment();
                                 break;
                             case SalonUserConfig.USER_PAYMENT_HISTORY_INQUIRY:
-                                new UserPaymentHistory();
+                                iUserMember = new UserPaymentHistory();
                                 break;
                             case SalonUserConfig.USER_PAYMENT_CANCEL:
-                                new UserPaymentCancel();
+                                iUserMember = new UserPaymentCancel();
                                 break;
                         }
+                        iUserMember.execute(sc);
                     }
                     break;
                 case SalonConfig.SYSTEM_SHUTDOWN:
